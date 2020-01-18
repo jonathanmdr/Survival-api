@@ -53,7 +53,7 @@ public class Debit {
 	private OffsetDateTime dueDate;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "tipo_registro")
+	@Column(name = "tipo_registro_credor")
 	private RegistryType registryType;
 	
 	@Enumerated(EnumType.STRING)
