@@ -11,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -46,9 +47,16 @@ public class Person {
 	@Column(name = "data_atualizacao")
 	private OffsetDateTime updatedDate;
 	
+	@Transient
+	private int age;
+	
 	@PrePersist
 	private void generateCode() {
 		this.setCode(UUID.randomUUID().toString());
+	}
+	
+	public int getAge() {		
+		return OffsetDateTime.now().getYear() - getDateOfBirth().getYear();
 	}
 
 }

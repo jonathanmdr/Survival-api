@@ -29,7 +29,7 @@ public class SericeAController {
 	}
 	
 	@GetMapping("/{cpf}")
-	public PersonDTO findByCpf(@PathVariable String cpf) {
+	public PersonDTO findPersonAndDebtsByCpf(@PathVariable String cpf) {
 		return personMapper.toDto(personService.findById(cpf));
 	}
 
