@@ -7,12 +7,13 @@ import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.PrePersist;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
@@ -27,9 +28,11 @@ public class Person {
 	@EqualsAndHashCode.Include
 	@Id
 	private String cpf;
-		
+	
+	@GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@Column(name = "codigo")
-	private String code;
+	private UUID code;
 	
 	@Column(name = "nome")
 	private String name;
@@ -49,11 +52,6 @@ public class Person {
 	
 	@Transient
 	private int age;
-	
-	@PrePersist
-	private void generateCode() {
-		this.setCode(UUID.randomUUID().toString());
-	}
 	
 	public int getAge() {		
 		return OffsetDateTime.now().getYear() - getDateOfBirth().getYear();
