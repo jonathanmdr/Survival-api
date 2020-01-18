@@ -14,7 +14,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
@@ -23,8 +22,8 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "debito")
-public class Debit {
+@Table(name = "renda")
+public class Income {
 	
 	@EqualsAndHashCode.Include
 	@Id
@@ -35,31 +34,15 @@ public class Debit {
 	@JoinColumn(name = "cpf")
 	private Person person;
 	
-	@Column(name = "razao_social_credor")
-	private String corporateName;
-	
-	@Column(name = "cnpj_credor")
-	private String cnpj;
-	
-	@Column(name = "contrato_credor")
-	private String contractNumber;
-	
-	@Column(name = "data_vencimento_credor")
-	private OffsetDateTime dueDate;
+	@Column(name = "descricao")
+	private String description;
 	
 	@Enumerated(EnumType.STRING)
-	@Column(name = "tipo_registro_credor")
-	private RegistryType registryType;
+	@Column(name = "tipo")
+	private IncomeType incomeType;
 	
-	@Enumerated(EnumType.STRING)
-	private Status status;
-	
-	@Column(name = "valor_debito")
-	private BigDecimal debitAmount;
-	
-	@CreationTimestamp
-	@Column(name = "data_disponibilizacao")
-	private OffsetDateTime createdDate;
+	@Column(name = "valor")
+	private BigDecimal amount;
 	
 	@UpdateTimestamp
 	@Column(name = "data_atualizacao")

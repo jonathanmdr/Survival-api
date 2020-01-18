@@ -5,11 +5,11 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import br.com.survival.domain.model.Person;
+import br.com.survival.domain.model.Income;
 
 @Repository
-public interface PersonRepository extends JpaRepository<Person, String> {
+public interface IncomeRepository extends JpaRepository<Income, String> {
 	
-	Optional<Person> findByCode(String code);
+	Optional<Income> findByCode(String code);
 
 }

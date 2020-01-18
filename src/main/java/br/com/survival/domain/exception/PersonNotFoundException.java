@@ -7,9 +7,5 @@ public class PersonNotFoundException extends EntityNotFoundException {
 	public PersonNotFoundException(String message) {
 		super(message);
 	}
-	
-	public PersonNotFoundException(Long personId) {
-		this(String.format("Pessoa de ID: %d não existe!", personId));
-	}
 
 }

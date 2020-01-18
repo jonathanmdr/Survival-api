@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import br.com.survival.domain.model.Debit;
 
 @Repository
-public interface DebitRepository extends JpaRepository<Debit, Long> {
+public interface DebitRepository extends JpaRepository<Debit, String> {
 
 	Optional<Debit> findByCode(String code);
 	
