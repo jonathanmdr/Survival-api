@@ -1,7 +1,5 @@
 package br.com.survival.api.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.MediaType;
@@ -10,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.survival.api.controller.openapi.ServiceAControllerOpenApi;
 import br.com.survival.api.dto.PersonDTO;
 import br.com.survival.api.event.CpfQueryEvent;
 import br.com.survival.api.mapper.PersonMapper;
@@ -18,7 +17,7 @@ import br.com.survival.domain.service.PersonService;
 
 @RestController
 @RequestMapping(path = "/serviceA", produces = MediaType.APPLICATION_JSON_VALUE)
-public class ServiceAController {
+public class ServiceAController implements ServiceAControllerOpenApi {
 	
 	@Autowired
 	private PersonService personService;
@@ -28,11 +27,6 @@ public class ServiceAController {
 	
 	@Autowired
 	private ApplicationEventPublisher publisher;
-	
-	@GetMapping
-	public List<PersonDTO> findAll() {
-		return personMapper.toCollectionDto(personService.findAll());
-	}
 	
 	@GetMapping("/{cpf}")
 	public PersonDTO findPersonAndDebtsByCpf(@PathVariable String cpf) {

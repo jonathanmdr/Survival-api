@@ -12,7 +12,6 @@ import br.com.survival.api.dto.EstablishmentDTO;
 import br.com.survival.api.dto.EventsDTO;
 import br.com.survival.api.dto.FinancialMovementDTO;
 import br.com.survival.api.dto.LastSearchDTO;
-import br.com.survival.domain.exception.SearchHistoryNotFoundException;
 import br.com.survival.domain.model.SearchHistory;
 import br.com.survival.domain.repository.SearchHistoryRepository;
 import br.com.survival.domain.service.mock.MockData;
@@ -22,17 +21,6 @@ public class SearchHistoryService {
 	
 	@Autowired
 	private SearchHistoryRepository searchHistoryRepository;
-	
-	@Transactional(readOnly = true)
-	public List<SearchHistory> findAll() {
-		return searchHistoryRepository.findAll();
-	}
-	
-	@Transactional(readOnly = true)
-	public SearchHistory findByCode(String code) {
-		return searchHistoryRepository.findByCode(code)
-				.orElseThrow(() -> new SearchHistoryNotFoundException(code));
-	}
 	
 	@Transactional
 	public SearchHistory save(SearchHistory searchHistory) {

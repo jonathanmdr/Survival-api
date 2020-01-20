@@ -30,10 +30,11 @@ public class ServiceC {
 	@GetMapping("/{cpf}")
 	public EventsDTO findLastConsultationByCpf(@PathVariable String cpf) {
 		Person person = personService.findById(cpf);
+		EventsDTO events = searchHistoryService.getEvents();
 		
 		publisher.publishEvent(new CpfQueryEvent(this, person));
 		
-		return searchHistoryService.getEvents();
+		return events;
 	}
 
 }

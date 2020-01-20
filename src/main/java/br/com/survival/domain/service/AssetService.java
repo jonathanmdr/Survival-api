@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.survival.domain.exception.AssetNotFoundException;
 import br.com.survival.domain.model.Asset;
 import br.com.survival.domain.model.Person;
 import br.com.survival.domain.repository.AssetRepository;
@@ -18,19 +17,8 @@ public class AssetService {
 	private AssetRepository assetRepository;
 	
 	@Transactional(readOnly = true)
-	public List<Asset> findAll() {
-		return assetRepository.findAll();
-	}
-	
-	@Transactional(readOnly = true)
 	public List<Asset> findByPerson(Person person) {
 		return assetRepository.findByPerson(person);
-	}
-	
-	@Transactional(readOnly = true)
-	public Asset findByCode(String code) {
-		return assetRepository.findByCode(code)
-				.orElseThrow(() -> new AssetNotFoundException(code));
 	}
 
 }
