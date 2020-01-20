@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.survival.api.controller.openapi.ServiceBControllerOpenApi;
 import br.com.survival.api.dto.AssetDTO;
 import br.com.survival.api.dto.IncomeDTO;
 import br.com.survival.api.dto.PersonScoreDTO;
@@ -24,7 +25,7 @@ import br.com.survival.domain.service.PersonService;
 
 @RestController
 @RequestMapping(path = "/serviceB", produces = MediaType.APPLICATION_JSON_VALUE)
-public class ServiceBController {
+public class ServiceBController implements ServiceBControllerOpenApi {
 	
 	@Autowired
 	private PersonService personService;

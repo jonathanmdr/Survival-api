@@ -50,7 +50,9 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 				.globalResponseMessage(RequestMethod.DELETE, globalDeleteResponseMessage())
 				.additionalModels(typeResolver.resolve(ApiError.class))
 				.apiInfo(apiInfo())
-				.tags(new Tag("Débitos", "Gerenciador de débitos por pessoa"));
+				.tags(new Tag("Débitos", "Gerenciador de débitos por pessoa"),
+					  new Tag("Score", "Gerenciador de score de crédito por pessoa"),
+					  new Tag("Eventos", "Gerenciador de eventos financeiros registrados por pessoa"));
 	}
 	
 	private List<ResponseMessage> globalGetResponseMessage() {

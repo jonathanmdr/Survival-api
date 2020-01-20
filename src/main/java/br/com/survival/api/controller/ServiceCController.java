@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.survival.api.controller.openapi.ServiceCControllerOpenApi;
 import br.com.survival.api.dto.EventsDTO;
 import br.com.survival.api.event.CpfQueryEvent;
 import br.com.survival.domain.model.Person;
@@ -16,7 +17,7 @@ import br.com.survival.domain.service.SearchHistoryService;
 
 @RestController
 @RequestMapping(path = "/serviceC", produces = MediaType.APPLICATION_JSON_VALUE)
-public class ServiceC {
+public class ServiceCController implements ServiceCControllerOpenApi {
 	
 	@Autowired
 	private SearchHistoryService searchHistoryService;
