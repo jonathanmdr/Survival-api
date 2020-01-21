@@ -85,3 +85,20 @@ spring.profiles.active=oauth-security
 3. Entendendo os perfis de segurança da aplicação:
  - oauth-security: Autentica o usuário na aplicação e verifica suas permissões de acesso para cada recurso da API por meio de tokens (Controla nível de acesso).
  - basic-security: Autentica o usuário na aplicação (Não controla nível de acesso).
+ 
+4. Utilizando o perfil `oauth-security`:
+ - Veja como autenticar o usuário e fazer uma requisição. 
+ [![node](https://github.com/jonathanmdr/Survival-api/blob/master/images/oauth.gif)](https://github.com/jonathanmdr/Survival-api/blob/master/images)
+ 
+5. Utilizando o perfil `basic-security`:
+ - Veja como autenticar o usuário e fazer uma requisição.
+ [![node](https://github.com/jonathanmdr/Survival-api/blob/master/images/basic.gif)](https://github.com/jonathanmdr/Survival-api/blob/master/images)
+ 
+6. Usuários e níveis de acesso aos recursos:
+|Usuário|Senha|Permissões de acesso
+|--|--|--|
+|admin@survival.com|admin|ROLE_PESQUISAR_DEBITO, ROLE_PESQUISAR_SCORE e ROLE_PESQUISAR_EVENTO
+|convidado@convidado.com|admin|ROLE_PESQUISAR_DEBITO e ROLE_PESQUISAR_SCORE
+
+## Requisições prontas para utilizar em testes:
+[Postman - Susvival API Documentation](https://especialistaspringrest.postman.co/collections/6429490-de452fec-4b3e-4eb2-847b-eb50b4a470ef?version=latest&workspace=22d50771-6f61-4202-813d-d3c696f8939e)
