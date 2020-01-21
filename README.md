@@ -30,3 +30,4 @@ A arquitetura é composta de uma VPC juntamente com uma sub-rede privada e uma s
 A nossa base de dados e a nossa API estão dentro do mesmo grupo de segurança, o que nos garante que a comunicação entre ambas ocorra de isolada e limitada ao grupo que as mesmas pertencem.
 
 ### Cenário da arquitetura
+[![node](https://github.com/jonathanmdr/Survival-api/blob/master/images/arquitetura_cloud.png)](https://github.com/jonathanmdr/Survival-api/blob/master/images)
