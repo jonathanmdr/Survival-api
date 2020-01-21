@@ -4,7 +4,10 @@ API de gestão de crédito.
 A API tem como objetivo disponibilizar os dados armazenados em tempo real à seus consumidores com segurança e assertividade.
 
 ## Travis CI
-[![Build Status](https://travis-ci.org/jonathanmdr/Survival-api.svg?branch=master)](https://travis-ci.org/jonathanmdr/Survival-api)
+
+|Branch|Status
+|--|--|
+|master|[![Build Status](https://travis-ci.org/jonathanmdr/Survival-api.svg?branch=master)](https://travis-ci.org/jonathanmdr/Survival-api)
 
 ## Tecnologias utilizadas
 [![node](https://img.shields.io/badge/OpenJDK-12-lightgray.svg)](https://www.java.com/pt_BR/download/)
