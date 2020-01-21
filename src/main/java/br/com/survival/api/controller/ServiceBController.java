@@ -48,7 +48,7 @@ public class ServiceBController implements ServiceBControllerOpenApi {
 	@Autowired
 	private ApplicationEventPublisher publisher;
 	
-	@GetMapping("/{cpf}")
+	@GetMapping("/{cpf}")	
 	public PersonScoreDTO findCreditScoreByCpf(@PathVariable String cpf) {
 		Person person = personService.findById(cpf);
 		List<AssetDTO> assets = assetMapper.toCollectionDto(assetService.findByPerson(person));

@@ -28,7 +28,7 @@ public class ServiceCController implements ServiceCControllerOpenApi {
 	@Autowired
 	private ApplicationEventPublisher publisher;
 	
-	@GetMapping("/{cpf}")
+	@GetMapping("/{cpf}")	
 	public EventsDTO findLastConsultationByCpf(@PathVariable String cpf) {
 		Person person = personService.findById(cpf);
 		EventsDTO events = searchHistoryService.getEvents();

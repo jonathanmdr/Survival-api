@@ -21,12 +21,11 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode(of = {"cpf"})
 @Entity
 @Table(name = "pessoa")
 public class Person {		
 	
-	@EqualsAndHashCode.Include
 	@Id
 	private String cpf;
 	

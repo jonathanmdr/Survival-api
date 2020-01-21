@@ -23,12 +23,11 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@EqualsAndHashCode(of = {"code"})
 @Entity
 @Table(name = "debito")
 public class Debit {
-	
-	@EqualsAndHashCode.Include
+		
 	@Id
 	@GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")

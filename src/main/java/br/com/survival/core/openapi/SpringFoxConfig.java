@@ -65,6 +65,10 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 					new ResponseMessageBuilder()
 						.code(HttpStatus.NOT_ACCEPTABLE.value())
 						.message("Recurso não possuí representação que poderia ser aceita pelo consumidor")
+						.build(),
+					new ResponseMessageBuilder()
+						.code(HttpStatus.UNAUTHORIZED.value())
+						.message("Usuário sem permissão de acesso ao recurso solicitado")
 						.build()
 				);
 	}
@@ -89,6 +93,10 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 						.code(HttpStatus.UNSUPPORTED_MEDIA_TYPE.value())
 						.message("Requisição recusada porque o corpo está em um formato não suportado")
 						.responseModel(new ModelRef("ApiError"))
+						.build(),
+					new ResponseMessageBuilder()
+						.code(HttpStatus.UNAUTHORIZED.value())
+						.message("Usuário sem permissão de acesso ao recurso solicitado")
 						.build()
 				);
 	}
@@ -104,6 +112,10 @@ public class SpringFoxConfig implements WebMvcConfigurer {
 						.code(HttpStatus.INTERNAL_SERVER_ERROR.value())
 						.message("Erro interno do servidor")
 						.responseModel(new ModelRef("ApiError"))
+						.build(),
+					new ResponseMessageBuilder()
+						.code(HttpStatus.UNAUTHORIZED.value())
+						.message("Usuário sem permissão de acesso ao recurso solicitado")
 						.build()
 				);
 	}

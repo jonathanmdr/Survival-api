@@ -1,3 +1,6 @@
+TRUNCATE TABLE usuario_permissao CASCADE;
+TRUNCATE TABLE permissao CASCADE;
+TRUNCATE TABLE usuario CASCADE;
 TRUNCATE TABLE historico_busca CASCADE;
 TRUNCATE TABLE renda CASCADE;
 TRUNCATE TABLE ativo CASCADE;
@@ -34,3 +37,17 @@ INSERT INTO renda(codigo, cpf, descricao, tipo, valor, data_atualizacao) VALUES(
 																			   (uuid_generate_v1(), '69884362009', 'Renda mensa', 'MENSAL', 1750.00, now()),
 																			   (uuid_generate_v1(), '69884362009', 'Renda mensal', 'MENSAL', 12000.00, now()),
 																			   (uuid_generate_v1(), '10519106091', 'Renda mensal', 'MENSAL', 5500.00, now());
+																			   
+INSERT INTO usuario (id, nome, email, senha) values (1, 'Administrador', 'admin@survival.com', '$2a$10$KaR9Tl166W6krIhR0gX9huBIkeBCqCVOCtOWKcgFYKzuqJq7XpNSa'),
+                                                    (2, 'convidado', 'convidado@survival.com', '$2a$10$DYoHyRVAM284VizS0reQfOHXaRpY12nrSCMFOD9FqBq2PW1PaI4hm');
+
+INSERT INTO permissao (id, descricao) values (1, 'ROLE_PESQUISAR_DEBITO'),
+                                             (2, 'ROLE_PESQUISAR_SCORE'),
+                                             (3, 'ROLE_PESQUISAR_EVENTO');
+
+INSERT INTO usuario_permissao (id_usuario, id_permissao) values (1, 1),
+                                                                (1, 2),
+                                                                (1, 3);
+
+INSERT INTO usuario_permissao (id_usuario, id_permissao) values (2, 1),
+                                                                (2, 2);																			   

@@ -28,7 +28,7 @@ public class ServiceAController implements ServiceAControllerOpenApi {
 	@Autowired
 	private ApplicationEventPublisher publisher;
 	
-	@GetMapping("/{cpf}")
+	@GetMapping("/{cpf}")	
 	public PersonDTO findPersonAndDebtsByCpf(@PathVariable String cpf) {
 		Person person = personService.findById(cpf);		
 		publisher.publishEvent(new CpfQueryEvent(this, person));		
