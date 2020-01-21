@@ -95,6 +95,7 @@ spring.profiles.active=oauth-security
  [![node](https://github.com/jonathanmdr/Survival-api/blob/master/images/basic.gif)](https://github.com/jonathanmdr/Survival-api/blob/master/images)
  
 6. Usuários e níveis de acesso aos recursos:
+
 |Usuário|Senha|Permissões de acesso
 |--|--|--|
 |admin@survival.com|admin|ROLE_PESQUISAR_DEBITO, ROLE_PESQUISAR_SCORE e ROLE_PESQUISAR_EVENTO
