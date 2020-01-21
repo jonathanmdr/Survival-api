@@ -15,6 +15,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Profile("basic-security")
 @EnableWebSecurity
 public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
+	
+	private String[] AUTHORIZE_URL_ACCESS = new String[] {"/v2/api-docs", "/configuration/ui", "/swagger-resources/**", "/configuration/security", "/swagger-ui.html", "/webjars/**"};
 
     @Autowired
     private UserDetailsService userDetailsService;
@@ -32,6 +34,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                    .antMatchers(AUTHORIZE_URL_ACCESS).permitAll()
                     .anyRequest().authenticated()
                 .and()
                     .httpBasic()

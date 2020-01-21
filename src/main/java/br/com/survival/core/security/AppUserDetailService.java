@@ -2,7 +2,6 @@ package br.com.survival.core.security;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +23,14 @@ public class AppUserDetailService implements UserDetailsService {
 	
 	@Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Optional<User> userOptional = userRepository.findByEmail(email);
-        User user = userOptional.orElseThrow(() -> new UsernameNotFoundException("Usuário e/ou senha incorretos!"));
+        User user = userRepository.findByEmail(email)
+        		.orElseThrow(() -> new UsernameNotFoundException("Usuário e/ou senha incorretos!"));
         return new UserSystem(user, getPermissions(user));
     }
 
     private Collection<? extends GrantedAuthority> getPermissions(User user) {
         Set<SimpleGrantedAuthority> authorities = new HashSet<>();
-        user.getPermissions().forEach(p -> authorities.add(new SimpleGrantedAuthority(p.getDescription().toUpperCase())));
+        user.getPermissions().forEach(permission -> authorities.add(new SimpleGrantedAuthority(permission.getDescription().toUpperCase())));
         return authorities;
     }    
 

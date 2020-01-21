@@ -14,6 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
 
 import br.com.survival.core.security.SurvivalApiProperty;
@@ -26,19 +28,17 @@ public class CorsFilter implements Filter {
     private SurvivalApiProperty survivalApiProperty;
 
     @Override
-    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain)
-            throws IOException, ServletException {
-
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
 
-        response.setHeader("Access-Control-Allow-Origin", survivalApiProperty.getAllowedOrigin());
-        response.setHeader("Access-Control-Allow-Credentials", "true");
+        response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_ORIGIN, survivalApiProperty.getAllowedOrigin());
+        response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_CREDENTIALS, "true");
 
-        if ("OPTIONS".equals(request.getMethod()) && survivalApiProperty.getAllowedOrigin().equals(request.getHeader("Origin"))) {
-            response.setHeader("Access-Control-Allow-Methods", "POST, GET, DELETE, PUT, OPTIONS");
-            response.setHeader("Access-Control-Allow-Headers", "Authorization, Content-Type, Accept");
-            response.setHeader("Access-Control-Max-Age", "3600");
+        if (HttpMethod.OPTIONS.toString().equals(request.getMethod()) && survivalApiProperty.getAllowedOrigin().equals(request.getHeader(HttpHeaders.ORIGIN))) {
+            response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_METHODS, "POST, GET, DELETE, PUT, OPTIONS");
+            response.setHeader(HttpHeaders.ACCESS_CONTROL_ALLOW_HEADERS, "Authorization, Content-Type, Accept");
+            response.setHeader(HttpHeaders.ACCESS_CONTROL_MAX_AGE, "3600");
 
             response.setStatus(HttpServletResponse.SC_OK);
         } else {

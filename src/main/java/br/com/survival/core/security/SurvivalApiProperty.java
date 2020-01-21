@@ -11,12 +11,5 @@ import lombok.Setter;
 public class SurvivalApiProperty {
 	
 	private String allowedOrigin = "http://localhost:8095";
-	private final Security security = new Security();
-	
-	@Getter
-	@Setter
-	public static class Security {
-		private boolean enableHttps;
-	}
 
 }
