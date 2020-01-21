@@ -1,7 +1,7 @@
 # Survival-api
 API de gestão de crédito.
 
-A API tem como objetivo disponibilizar os dados armazenados em tempo real à seus consumidores com segurança e assertividade
+A API tem como objetivo disponibilizar os dados armazenados em tempo real à seus consumidores com segurança e assertividade.
 
 ## Travis CI
 [![Build Status](https://travis-ci.org/jonathanmdr/Survival-api.svg?branch=master)](https://travis-ci.org/jonathanmdr/Survival-api)
@@ -27,7 +27,7 @@ Para disponibilizar a API em cloud pensando em alta disponibilidade, escalabilid
  - EC2: Elastic Compute Cloud
 
 A arquitetura é composta de uma VPC juntamente com uma sub-rede privada e uma sub-rede pública, onde na sub-rede privada temos a nossa base de dados postgreSql em um RDS e na sub-rede pública temos os serviços da nossa API em um EC2.
-A nossa base de dados e a nossa API estão dentro do mesmo grupo de segurança, o que nos garante que a comunicação entre ambas ocorra de isolada e limitada ao grupo que as mesmas pertencem.
+A nossa base de dados e a nossa API estão dentro do mesmo grupo de segurança, o que nos garante que a comunicação entre ambas ocorra de forma isolada e limitada ao grupo que as mesmas pertencem.
 
 ## Cenário da arquitetura
 [![node](https://github.com/jonathanmdr/Survival-api/blob/master/images/arquitetura_cloud.png)](https://github.com/jonathanmdr/Survival-api/blob/master/images)
@@ -95,10 +95,11 @@ spring.profiles.active=oauth-security
  [![node](https://github.com/jonathanmdr/Survival-api/blob/master/images/basic.gif)](https://github.com/jonathanmdr/Survival-api/blob/master/images)
  
 6. Usuários e níveis de acesso aos recursos:
+
 |Usuário|Senha|Permissões de acesso
 |--|--|--|
 |admin@survival.com|admin|ROLE_PESQUISAR_DEBITO, ROLE_PESQUISAR_SCORE e ROLE_PESQUISAR_EVENTO
-|convidado@convidado.com|admin|ROLE_PESQUISAR_DEBITO e ROLE_PESQUISAR_SCORE
+|convidado@convidado.com|convidado|ROLE_PESQUISAR_DEBITO e ROLE_PESQUISAR_SCORE
 
 ## Requisições prontas para utilizar em testes:
 [Postman - Susvival API Documentation](https://especialistaspringrest.postman.co/collections/6429490-de452fec-4b3e-4eb2-847b-eb50b4a470ef?version=latest&workspace=22d50771-6f61-4202-813d-d3c696f8939e)
