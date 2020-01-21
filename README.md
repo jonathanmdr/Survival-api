@@ -1,7 +1,7 @@
 # Survival-api
 API de gestão de crédito.
 
-A API tem como objetivo disponibilizar os dados armazenados em tempo real à seus consumidores com segurança e assertividade
+A API tem como objetivo disponibilizar os dados armazenados em tempo real à seus consumidores com segurança e assertividade.
 
 ## Travis CI
 [![Build Status](https://travis-ci.org/jonathanmdr/Survival-api.svg?branch=master)](https://travis-ci.org/jonathanmdr/Survival-api)
@@ -27,7 +27,7 @@ Para disponibilizar a API em cloud pensando em alta disponibilidade, escalabilid
  - EC2: Elastic Compute Cloud
 
 A arquitetura é composta de uma VPC juntamente com uma sub-rede privada e uma sub-rede pública, onde na sub-rede privada temos a nossa base de dados postgreSql em um RDS e na sub-rede pública temos os serviços da nossa API em um EC2.
-A nossa base de dados e a nossa API estão dentro do mesmo grupo de segurança, o que nos garante que a comunicação entre ambas ocorra de isolada e limitada ao grupo que as mesmas pertencem.
+A nossa base de dados e a nossa API estão dentro do mesmo grupo de segurança, o que nos garante que a comunicação entre ambas ocorra de forma isolada e limitada ao grupo que as mesmas pertencem.
 
 ## Cenário da arquitetura
 [![node](https://github.com/jonathanmdr/Survival-api/blob/master/images/arquitetura_cloud.png)](https://github.com/jonathanmdr/Survival-api/blob/master/images)
