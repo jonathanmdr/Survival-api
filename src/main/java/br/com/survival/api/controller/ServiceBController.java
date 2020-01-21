@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,7 +49,8 @@ public class ServiceBController implements ServiceBControllerOpenApi {
 	@Autowired
 	private ApplicationEventPublisher publisher;
 	
-	@GetMapping("/{cpf}")	
+	@GetMapping("/{cpf}")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_SCORE') and #oauth2.hasScope('read')")
 	public PersonScoreDTO findCreditScoreByCpf(@PathVariable String cpf) {
 		Person person = personService.findById(cpf);
 		List<AssetDTO> assets = assetMapper.toCollectionDto(assetService.findByPerson(person));

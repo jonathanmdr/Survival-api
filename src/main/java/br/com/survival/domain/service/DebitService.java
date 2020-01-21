@@ -1,5 +1,7 @@
 package br.com.survival.domain.service;
 
+import java.util.UUID;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,7 +17,7 @@ public class DebitService {
 	private DebitRepository debitRepository;
 	
 	@Transactional(readOnly = true)
-	public Debit findByCode(String code) {
+	public Debit findByCode(UUID code) {
 		return debitRepository.findByCode(code)
 				.orElseThrow(() -> new DebitNotFoundException(code));
 	}

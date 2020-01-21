@@ -6,6 +6,7 @@ import lombok.Getter;
 public enum ApiErrorType {
 	
 	RESOURCE_NOT_FOUND("/recurso-nao-encontrado", "Recurso não encontrado"),
+	ACCESS_DENIED("/acesso-ao-recurso-negado", "Usuário sem permissão para acessar o recurso requerido"),
 	ENTITY_IN_USE("/entidade-em-uso", "Entidade em uso"),
 	BUSINESS_EXCEPTION("/erro-de-negocio", "Violação de regra de negócio"),
 	REQUEST_BODY_ERROR("/erro-no-corpo-da-requisicao", "Erro no corpo da requisição"),

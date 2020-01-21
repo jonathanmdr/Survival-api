@@ -3,6 +3,7 @@ package br.com.survival.api.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,7 +29,8 @@ public class ServiceCController implements ServiceCControllerOpenApi {
 	@Autowired
 	private ApplicationEventPublisher publisher;
 	
-	@GetMapping("/{cpf}")	
+	@GetMapping("/{cpf}")
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_EVENTO') and #oauth2.hasScope('read')")
 	public EventsDTO findLastConsultationByCpf(@PathVariable String cpf) {
 		Person person = personService.findById(cpf);
 		EventsDTO events = searchHistoryService.getEvents();

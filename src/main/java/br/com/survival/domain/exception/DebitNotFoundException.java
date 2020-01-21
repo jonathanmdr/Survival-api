@@ -1,5 +1,7 @@
 package br.com.survival.domain.exception;
 
+import java.util.UUID;
+
 public class DebitNotFoundException extends EntityNotFoundException {
 	
 	private static final long serialVersionUID = 1L;
@@ -8,7 +10,7 @@ public class DebitNotFoundException extends EntityNotFoundException {
 		super(message);
 	}
 	
-	public DebitNotFoundException(Long debitCode) {
+	public DebitNotFoundException(UUID debitCode) {
 		this(String.format("Debito de código: %d não existe!", debitCode));
 	}
 
