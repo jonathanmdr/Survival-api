@@ -105,7 +105,7 @@ spring.profiles.active=oauth-security
 |convidado@survival.com|convidado|ROLE_PESQUISAR_DEBITO e ROLE_PESQUISAR_SCORE
 
 ## Requisições prontas para utilizar em testes:
-[Postman - Survival API Documentation](https://especialistaspringrest.postman.co/collections/6429490-de452fec-4b3e-4eb2-847b-eb50b4a470ef?version=latest&workspace=22d50771-6f61-4202-813d-d3c696f8939e)
+[Postman - Survival API Documentation](https://documenter.getpostman.com/view/6429490/SWT5jgkj)
 
 ## Auditoria
 Todos os serviços são auditados a cada requisição gerando um registro na base de dados com informações para análise.
