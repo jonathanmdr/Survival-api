@@ -12,7 +12,7 @@ import br.com.survival.core.security.UserSystem;
 
 public class CustomTokenEnhancer implements TokenEnhancer {
 
-	@Override
+    @Override
     public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
         UserSystem user= (UserSystem) authentication.getPrincipal();
 
