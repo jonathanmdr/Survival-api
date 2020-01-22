@@ -14,7 +14,7 @@ import org.springframework.security.oauth2.provider.expression.OAuth2MethodSecur
 @Configuration
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
 	
-	private String[] AUTHORIZE_URL_ACCESS = new String[] {"/v2/api-docs", "/configuration/ui", "/swagger-resources/**", "/configuration/security", "/swagger-ui.html", "/webjars/**"};
+    private String[] AUTHORIZE_URL_ACCESS = new String[] {"/v2/api-docs", "/configuration/ui", "/swagger-resources/**", "/configuration/security", "/swagger-ui.html", "/webjars/**"};
 
     @Override
     public void configure(HttpSecurity http) throws Exception {
