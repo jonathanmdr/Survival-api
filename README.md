@@ -10,7 +10,7 @@ A API tem como objetivo disponibilizar os dados armazenados em tempo real à seu
 |master|[![Build Status](https://travis-ci.org/jonathanmdr/Survival-api.svg?branch=master)](https://travis-ci.org/jonathanmdr/Survival-api)
 
 ## Tecnologias utilizadas
-[![node](https://img.shields.io/badge/OpenJDK-12-lightgray.svg)](https://www.java.com/pt_BR/download/)
+[![node](https://img.shields.io/badge/OpenJDK-12.0.2-lightgray.svg)](https://www.java.com/pt_BR/download/)
 [![node](https://img.shields.io/badge/Maven-3.5.4-steelblue.svg)](https://maven.apache.org/download.cgi)
 [![node](https://img.shields.io/badge/Lombok-1.18.8-indianRed.svg)](https://projectlombok.org/)
 [![node](https://img.shields.io/badge/PostgreSQL-42.2.6-blue.svg)](https://www.postgresql.org/download/)
