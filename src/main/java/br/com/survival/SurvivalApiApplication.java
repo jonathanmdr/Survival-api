@@ -16,12 +16,12 @@ public class SurvivalApiApplication {
 	private static ApplicationContext APPLICATION_CONTEXT;
 
 	public static void main(String[] args) {
-		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
-		APPLICATION_CONTEXT = SpringApplication.run(SurvivalApiApplication.class, args);
+	    TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+	    APPLICATION_CONTEXT = SpringApplication.run(SurvivalApiApplication.class, args);
 	}
 	
 	public static <T> T getBean(Class<T> type) {
-        return APPLICATION_CONTEXT.getBean(type);
-    }
+            return APPLICATION_CONTEXT.getBean(type);
+        }
 
 }
