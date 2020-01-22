@@ -28,7 +28,7 @@ public class Asset {
 		
 	@Id
 	@GeneratedValue(generator = "uuid2")
-    @GenericGenerator(name = "uuid2", strategy = "uuid2")
+        @GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@Column(name = "codigo")
 	private UUID code;
 	
