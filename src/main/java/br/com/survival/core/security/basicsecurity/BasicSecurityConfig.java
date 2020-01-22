@@ -16,7 +16,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	
-	private String[] AUTHORIZE_URL_ACCESS = new String[] {"/v2/api-docs", "/configuration/ui", "/swagger-resources/**", "/configuration/security", "/swagger-ui.html", "/webjars/**"};
+    private String[] AUTHORIZE_URL_ACCESS = new String[] {"/v2/api-docs", "/configuration/ui", "/swagger-resources/**", "/configuration/security", "/swagger-ui.html", "/webjars/**"};
 
     @Autowired
     private UserDetailsService userDetailsService;
