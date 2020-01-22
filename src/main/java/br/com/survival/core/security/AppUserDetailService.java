@@ -18,10 +18,10 @@ import br.com.survival.domain.repository.UserRepository;
 @Service
 public class AppUserDetailService implements UserDetailsService {
 	
-	@Autowired
-	private UserRepository userRepository;
+    @Autowired
+    private UserRepository userRepository;
 	
-	@Override
+    @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email)
         		.orElseThrow(() -> new UsernameNotFoundException("Usuário e/ou senha incorretos!"));
