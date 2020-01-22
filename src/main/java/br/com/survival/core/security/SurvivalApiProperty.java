@@ -10,6 +10,6 @@ import lombok.Setter;
 @ConfigurationProperties("survival")
 public class SurvivalApiProperty {
 	
-	private String allowedOrigin = "http://localhost:8095";
+    private String allowedOrigin = "http://localhost:8095";
 
 }
