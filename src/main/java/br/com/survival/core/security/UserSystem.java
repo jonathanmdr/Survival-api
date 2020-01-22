@@ -9,7 +9,7 @@ import lombok.Getter;
 
 public class UserSystem extends org.springframework.security.core.userdetails.User {
 	
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     @Getter
     private User user;
