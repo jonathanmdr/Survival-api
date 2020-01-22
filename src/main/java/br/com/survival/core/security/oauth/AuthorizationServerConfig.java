@@ -33,23 +33,23 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	private static final String SCOPE_WRITE = "write";
     
     @Autowired
-	private AuthenticationManager authenticationManager;
+    private AuthenticationManager authenticationManager;
     
     @Autowired
     private UserDetailsService userDetailsService;
 
-	@Override
-	public void configure(ClientDetailsServiceConfigurer configurer) throws Exception {
-		configurer.inMemory()
-				.withClient(CLIENT)
-				.secret(PASSWORD_CLIENT)
-				.authorizedGrantTypes(GRANT_TYPE_PASSWORD, GRANT_REFRESH_TOKEN)
-				.scopes(SCOPE_READ, SCOPE_WRITE)
-				.accessTokenValiditySeconds(1800)
-				.refreshTokenValiditySeconds(3600 * 24);
-	}
+    @Override
+    public void configure(ClientDetailsServiceConfigurer configurer) throws Exception {
+	configurer.inMemory()
+			.withClient(CLIENT)
+			.secret(PASSWORD_CLIENT)
+			.authorizedGrantTypes(GRANT_TYPE_PASSWORD, GRANT_REFRESH_TOKEN)
+			.scopes(SCOPE_READ, SCOPE_WRITE)
+			.accessTokenValiditySeconds(1800)
+			.refreshTokenValiditySeconds(3600 * 24);
+    }
 
-	@Override
+    @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
         TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
         tokenEnhancerChain.setTokenEnhancers(Arrays.asList(tokenEnhancer(), accessTokenConverter()));
