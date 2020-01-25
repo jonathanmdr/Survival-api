@@ -104,7 +104,7 @@ spring.profiles.active=oauth-security
 |admin@survival.com|admin|ROLE_PESQUISAR_DEBITO, ROLE_PESQUISAR_SCORE e ROLE_PESQUISAR_EVENTO
 |convidado@survival.com|convidado|ROLE_PESQUISAR_DEBITO e ROLE_PESQUISAR_SCORE
 
-## Requisições prontas para utilizar em testes:
+## Requisições prontas para utilizar em testes
 [Postman - Survival API Documentation](https://documenter.getpostman.com/view/6429490/SWT5jgkj)
 
 ## Auditoria
