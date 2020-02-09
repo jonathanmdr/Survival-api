@@ -86,8 +86,8 @@ spring.profiles.active=oauth-security
 ```
 
 3. Entendendo os perfis de segurança da aplicação:
- - oauth-security: Autentica o usuário na aplicação e verifica suas permissões de acesso para cada recurso da API por meio de tokens (Controla nível de acesso).
- - basic-security: Autentica o usuário na aplicação (Não controla nível de acesso).
+ - **oauth-security**: Autentica o usuário na aplicação e verifica suas permissões de acesso para cada recurso da API por meio de tokens (Controla nível de acesso).
+ - **basic-security**: Autentica o usuário na aplicação (Não controla nível de acesso).
  
 4. Utilizando o perfil `oauth-security`:
  - Veja como autenticar o usuário e fazer uma requisição. 
